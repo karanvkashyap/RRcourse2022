@@ -165,7 +165,15 @@ The code is now much easier to understand and optimize.
 Consider a [FizzBuzz problem](https://codegolf.stackexchange.com/questions/58615/1-2-fizz-4-buzz). The program should write numbers from 1 to 100, separated by a newline, but multiples of 3 and of 5 should be replaced with "Fizz" and "Buzz" respectively. For numbers which are multiples of both 3 and 5 print "FizzBuzz". Here are some solutions, which are not readable:
 
 Python: `for i in range(100):print(int(i%3/2)*'Fizz'+int(i%5/4)*'Buzz'or-~i)`
-R: `x=y=1:100;y[3*x]='Fizz';y[5*x]='Buzz';y[15*x]='FizzBuzz';write(y[x],1)`
+
+R: 
+x=1:100; #Create a vector 'x' of length 100 
+y=1:100; #Create a vector 'y' of length 100
+y[3*x]='Fizz'; #Replace number with word 'Fizz' in vector 'y' at every interval/multiple of 3
+y[5*x]='Buzz'; #Substitute/Replace number with word 'Buzz' in Vector 'y' at every interval/multiple of 5
+y[15*x]='FizzBuzz'; #Substitute/Replace number with word 'FizzBuzz' in Vector 'y' at every interval/multiple of 15
+write(y[x],1) #Print vector y till the length of vector x
+
 
 Write a readable and working solution in your preferred language.
 
@@ -309,8 +317,47 @@ R has no such solution built in, but the *types* library works and is supported 
 ## Exercise 2
 
 1. Write a function which takes *n* (float or integer) as a parameter and returns the largest Fibonacci number smaller than *n*. The function should be documented, with type hints, and appropriate comments.
+
+# take input from the user to show the number of rows
+nrows = as.integer(readline(prompt="How many rows you want to display? "))
+# first two rows
+n1 = 0
+n2 = 1
+count <= 1
+# check if the number of rows is valid
+if(nrows <= 0) {
+  print("Please enter a positive integer")
+} else {
+  if(nrows == 1) {
+    print("Fibonacci sequence:")
+    print(n1)
+  } else {
+    print("Fibonacci sequence:")
+    print(n1)
+    print(n2)
+    while(count < nrows) {
+      nth = n1 + n2
+      print(nth)
+      # update values
+      n1 = n2
+      n2 = nth
+      count = count + 1
+    }
+  }
+}
+
+
 2. Write a function which reverses digits in an integer number (for example 7245 -> 5427). The function should be documented, with type hints, and appropriate comments.
 
+num = as.integer(readline(prompt="ENTER THE NUMBER"))
+rev_num = 0;
+  for (num in rev_num) {
+    rev_num = (rev_num*10)+ #Append lastDigit to reverse
+    (num%10) #Isolate the last digit in number
+    rev_num = num/10 #Remove last digit from number
+    
+  }
+print(rev_num)
 
 ---
 
