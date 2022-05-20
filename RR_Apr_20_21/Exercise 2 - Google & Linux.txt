@@ -1,0 +1,106 @@
+k_kashyap@instance-1:~$ ls
+test.txt
+k_kashyap@instance-1:~$ pwd
+/home/k_kashyap
+k_kashyap@instance-1:~$ mkdir rr
+k_kashyap@instance-1:~$ ls
+rr  test.txt
+k_kashyap@instance-1:~$ cd rr/
+k_kashyap@instance-1:~/rr$ touch test.txt
+k_kashyap@instance-1:~/rr$ ls
+test.txt
+k_kashyap@instance-1:~/rr$ touch new
+k_kashyap@instance-1:~/rr$ ls
+new  test.txt
+k_kashyap@instance-1:~/rr$ rm new
+k_kashyap@instance-1:~/rr$ ls
+test.txt
+k_kashyap@instance-1:~/rr$ touch new.txt
+k_kashyap@instance-1:~/rr$ nana new.txt
+Command 'nana' not found, did you mean:
+  command 'kana' from snap kana (0.0.1.2)
+  command 'nano' from snap nano (5.7+pkg-4057)
+  command 'nano' from deb nano (6.2-1)
+  command 'nama' from deb nama (1.216-1)
+  command 'nant' from deb nant (0.92~rc1+dfsg-7)
+See 'snap info <snapname>' for additional versions.
+k_kashyap@instance-1:~/rr$ nano new.txt
+k_kashyap@instance-1:~/rr$ cd /etc/modules
+-bash: cd: /etc/modules: Not a directory
+k_kashyap@instance-1:~/rr$ cd ..
+k_kashyap@instance-1:~$ ls
+rr  test.txt
+k_kashyap@instance-1:~$ pwd
+/home/k_kashyap
+k_kashyap@instance-1:~$ cd //etc/modules
+-bash: cd: //etc/modules: Not a directory
+k_kashyap@instance-1:~$ cd //etc
+k_kashyap@instance-1://etc$ ls
+NetworkManager          e2scrub.conf        libaudit.conf        opt                     shadow-
+PackageKit              ec2_version         libblockdev          os-release              shells
+X11                     environment         libnl-3              osconfig                skel
+adduser.conf            ethertypes          locale.alias         overlayroot.conf        sos
+alternatives            fonts               locale.gen           overlayroot.local.conf  ssh
+apparmor                fstab               localtime            pam.conf                ssl
+apparmor.d              fuse.conf           logcheck             pam.d                   subgid
+apport                  gai.conf            login.defs           passwd                  subgid-
+apt                     google_instance_id  logrotate.conf       passwd-                 subuid
+bash.bashrc             groff               logrotate.d          perl                    subuid-
+bash_completion         group               lsb-release          pm                      sudo.conf
+bash_completion.d       group-              lvm                  polkit-1                sudo_logsrvd.conf
+bindresvport.blacklist  grub.d              machine-id           pollinate               sudoers
+binfmt.d                gshadow             magic                ppp                     sudoers.d
+boto.cfg                gshadow-            magic.mime           profile                 sysctl.conf
+byobu                   gss                 manpath.config       profile.d               sysctl.d
+ca-certificates         hdparm.conf         mdadm                protocols               systemd
+ca-certificates.conf    host.conf           mime.types           python3                 terminfo
+chrony                  hostname            mke2fs.conf          python3.10              timezone
+cloud                   hosts               modprobe.d           rc0.d                   tmpfiles.d
+console-setup           hosts.allow         modules              rc1.d                   ubuntu-advantage
+cron.d                  hosts.deny          modules-load.d       rc2.d                   ucf.conf
+cron.daily              init.d              mtab                 rc3.d                   udev
+cron.hourly             initramfs-tools     multipath            rc4.d                   ufw
+cron.monthly            inputrc             multipath.conf       rc5.d                   update-manager
+cron.weekly             iproute2            nanorc               rc6.d                   update-motd.d
+crontab                 iscsi               needrestart          rcS.d                   update-notifier
+cryptsetup-initramfs    issue               netconfig            resolv.conf             usb_modeswitch.conf
+crypttab                issue.net           netplan              rmt                     usb_modeswitch.d
+dbus-1                  kernel              network              rpc                     vim
+debconf.conf            kernel-img.conf     networkd-dispatcher  rsyslog.conf            vmware-tools
+debian_version          landscape           networks             rsyslog.d               vtrgb
+default                 ld.so.cache         newt                 screenrc                wgetrc
+deluser.conf            ld.so.conf          nftables.conf        security                xattr.conf
+depmod.d                ld.so.conf.d        nginx                selinux                 xdg
+dhcp                    ldap                nsswitch.conf        services                zsh_command_not_found
+dpkg                    legal               nvme                 shadow
+k_kashyap@instance-1://etc$ cp debian_version //rr
+cp: cannot create regular file '//rr': Permission denied
+k_kashyap@instance-1://etc$ cp crontab ^C
+k_kashyap@instance-1://etc$ cp crontab /home/k_kashyap/rr
+k_kashyap@instance-1://etc$ cd /home/k_kashyap/rr
+k_kashyap@instance-1:~/rr$ ls
+crontab  new.txt  test.txt
+k_kashyap@instance-1:~/rr$ rmdir rr
+rmdir: failed to remove 'rr': No such file or directory
+k_kashyap@instance-1:~/rr$ cd .
+k_kashyap@instance-1:~/rr$ cd ..
+k_kashyap@instance-1:~$ ls
+rr  test.txt
+k_kashyap@instance-1:~$ rmdir rr
+rmdir: failed to remove 'rr': Directory not empty
+k_kashyap@instance-1:~$ cd rr
+k_kashyap@instance-1:~/rr$ ls
+crontab  new.txt  test.txt
+k_kashyap@instance-1:~/rr$ rm crontab
+k_kashyap@instance-1:~/rr$ rm new.txt
+k_kashyap@instance-1:~/rr$ rm test.txt
+k_kashyap@instance-1:~/rr$ ls
+k_kashyap@instance-1:~/rr$ rmdir rr
+rmdir: failed to remove 'rr': No such file or directory
+k_kashyap@instance-1:~/rr$ cd ..
+k_kashyap@instance-1:~$ rmdir rr
+k_kashyap@instance-1:~$ ls
+test.txt
+k_kashyap@instance-1:~$ ^C
+k_kashyap@instance-1:~$ ^C
+k_kashyap@instance-1:~$ 
